@@ -1,13 +1,16 @@
 function validateSyntax() {
-  let input = document.getElementById("petInput").value;
-  let result = ""; // Placeholder for validation result
+  const input = document.getElementById("petInput").value;
+  const resultMessage = document.getElementById("result"); // Placeholder for validation result
 
-  // Check if input starts with 'pet_' and followed by alphanumeric characters
-  if (/^pet_\d{4}[A-Za-z]+$/.test(input)) {
-    result = "Valid Syntax";
+  // Check if input starts with 'pet_' followed by a year between 2000 and 2024, and then followed by alphanumeric characters for the pet name
+  let result;
+  if (/^pet_(20[0-1][0-9]|202[0-4])[A-Za-z]+$/.test(input)) {
+    result =
+      'Valid Syntax <span style="color:green; font-size:60px;">&#x25cf;</span>';
   } else {
-    result = "Invalid Syntax";
+    result =
+      'Invalid Syntax <span style="color:red; font-size:60px;">&#x25cf;</span>';
   }
 
-  document.getElementById("result").innerText = result;
+  resultMessage.innerHTML = result;
 }
