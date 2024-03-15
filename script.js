@@ -5,11 +5,9 @@ function validateSyntax() {
   // Check if input starts with 'pet_' followed by a year between 2000 and 2024, and then followed by alphanumeric characters for the pet name
   let result;
   if (/^pet_(20[0-1][0-9]|202[0-4])[A-Za-z]+$/.test(input)) {
-    result =
-      'Valid Syntax <span style="color:green; font-size:60px;">&#x25cf;</span>';
+    result ='Valid Syntax 🟢';
   } else {
-    result =
-      'Invalid Syntax <span style="color:red; font-size:60px;">&#x25cf;</span>';
+    result ='Invalid Syntax 🔴';
   }
 
   resultMessage.innerHTML = result;
